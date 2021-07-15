@@ -12,12 +12,12 @@ const enum State {
   MAP_VALUE,
 }
 
-type MapKeyType = string | number;
+type MapKeyType = string | number | bigint;
 
 const isValidMapKeyType = (key: unknown): key is MapKeyType => {
   const keyType = typeof key;
 
-  return keyType === "string" || keyType === "number";
+  return keyType === "string" || keyType === "number" || keyType === "bigint";
 };
 
 type StackMapState = {
